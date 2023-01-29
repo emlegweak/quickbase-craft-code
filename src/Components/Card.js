@@ -12,8 +12,10 @@ const Card = (props) => {
 
       <img src={props.img} alt={props.title} />
 
-      {/*add default title if none provided*/}
-      <h1 className='title'>{props.title || 'National Park'}</h1>
+      {/*conditionally render title css based on value of props.category, add default title if none provided*/}
+      <h1 className={`title ${props.category==='Natural' ? 'title--natural' : (props.category==='Historical' ? 'title--historical' : 'title--monument')}`}>
+        {props.title || 'National Park'}
+      </h1>
 
       <p className='body'>{props.body}</p>
 

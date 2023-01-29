@@ -4,6 +4,7 @@
     border: 1px solid $dune;
     color: $black;
     font-size: 16px;
+    position: relative;
     height: 100%;
 
     img{
@@ -35,10 +36,21 @@
         font-size: 36px;
         font-weight: bold;
         padding: 15px;
+
+         &--natural{
+            color: $asparagus;
+        }
+        &--historical{
+            color: $carrot;
+        }
+        &--monument{
+            color: $elm;
+        }
     }
 
     .body{
-        padding: 15px;  
+        /* increased bottom padding due to absolute positioning of links (need to account for the height of the button) - how would I fix this? */
+        padding: 15px 15px 60px 15px;  
     }
 
     .link{
@@ -47,11 +59,14 @@
         text-decoration: none;
         display: inline-block;
         margin: 15px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
 
         &--none{
             display: none;
         }
-        /* how to condense this so that it's not a duplicate of the banner code above?? */
+        /* how to condense this so that it's not a duplicate of the banner/title code above?? */
         &--natural{
             background-color: $asparagus;
             color: $black;
