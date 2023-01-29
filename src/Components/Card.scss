@@ -1,0 +1,93 @@
+@import"../style.scss";
+
+.baseCard{
+    border: 1px solid $dune;
+    color: $black;
+    font-size: 16px;
+    height: 100%;
+
+    img{
+        height:250px;
+        width: 100%;
+    }
+    
+    .banner{
+        padding: 15px;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 0px;
+
+        &--natural{
+            background-color: $asparagus;
+            color: $black;
+        }
+        &--historical{
+            background-color: $carrot;
+            color: $black;
+        }
+        &--monument{
+            background-color: $elm;
+            color: $white;
+        }
+    }
+
+    .title{
+        font-size: 36px;
+        font-weight: bold;
+        padding: 15px;
+    }
+
+    .body{
+        padding: 15px;  
+    }
+
+    .link{
+        padding: 8px 15px;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+        margin: 15px;
+
+        &--none{
+            display: none;
+        }
+        /* how to condense this so that it's not a duplicate of the banner code above?? */
+        &--natural{
+            background-color: $asparagus;
+            color: $black;
+
+            &:hover{
+                background-color: $elm;
+                color: $white;
+            }
+        }
+        &--historical{
+            background-color: $carrot;
+            color: $black;
+
+            &:hover{
+                background-color: $geraldine;
+            }
+        }
+        &--monument{
+            background-color: $elm;
+            color: $white;
+
+            &:hover{
+                background-color: $asparagus;
+                color: $black;
+            }
+        }
+
+    }
+
+    @media (min-width: 300px) and (max-width: 768px) {
+        .banner{
+            font-size: 18px;
+        }
+        .title{
+            font-size: 24px;
+        }
+    }
+}
+

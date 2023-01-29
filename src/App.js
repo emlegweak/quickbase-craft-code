@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from './Components/Card';
+import dataset1 from './data/dataset1'
+import './style.scss';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 function App() {
+  const datasetElements = dataset1.map(dataset =>{
+    //render card only if image exists
+    if(dataset.image !== ""){
+    return <Col md={4}> 
+    <Card 
+      title={dataset.title}
+      link={dataset.link}
+      linkText={dataset.linkText}
+      body={dataset.body}
+      img={dataset.image}
+      category={dataset.category}/>
+    </Col>
+    }
+    //returns null when the listed conditions are not matched
+    return null
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid>
+      <Row>
+        {datasetElements}
+      </Row>
+    </Container>
   );
 }
 
